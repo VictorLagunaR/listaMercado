@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <main>
+        <aside>
+            <img src="../assets/imagens/imagenet-cadastro-de-empresas.png" class="cadastroImg">
+        </aside>
+        <article>
+            <form class="form" action="../controler/cadastro.php" method="POST">
+                <label for="name">Nome</label>
+                <input type="text" name="name" class="container__input">
+                <label for="nascimento">Nascimento</label>
+                <input type="date" name="nascimento" class="container__input">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" class="container__input">
+                <label for="password">Senha</label>
+                <input type="password" name="password" class="container__input">
+
+                <input type="submit" value="Cadastrar" id="btnCadastrar">
+            </form>
+            
+        </article>
+    </main>
+</body>
+</html>
