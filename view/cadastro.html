@@ -9,12 +9,14 @@
 <body>
     <main>
         <aside>
-            <img src="../assets/imagens/imagenet-cadastro-de-empresas.png" class="cadastroImg">
+            <img src="assets/imagens/imagenet-cadastro-de-empresas.png" class="cadastroImg">
         </aside>
         <article>
-            <form class="form" action="../controler/cadastro.php" method="POST">
+            <form class="form" action="../Model/Cadastramento.php" method="POST">
                 <label for="name">Nome</label>
                 <input type="text" name="name" class="container__input">
+                <label for="localidade">Localidade</label>
+                <input type="text" name="localidade" class="container__input">
                 <label for="nascimento">Nascimento</label>
                 <input type="date" name="nascimento" class="container__input">
                 <label for="email">E-mail</label>
@@ -27,5 +29,7 @@
             
         </article>
     </main>
+
+    <script src="assets/javascript/verificacaoCadastro.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <main>
         <h1 class="titulo">Login</h1>
         <div class="container">
-            <form class="container__entrada" action="../controler/login.php">
+            <form class="container__entrada" action="../Controller/login.php">
                 <label for="" class="entrada__label">E-mail</label>
                 <input type="text" class="entrada__input">
                 <label for="" class="entrada__label">Password</label>
