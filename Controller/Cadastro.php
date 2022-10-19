@@ -32,13 +32,13 @@ class Cadastro{
         $stmt = $this->con->prepare("SELECT email FROM cadastros WHERE email = ?");
         $stmt -> bind_param("s", $email);
         $resul = $stmt -> get_result();
-        if(strlen($resul) == 0){
+        if(strlen($resul) != 0){
 
             $cadastro = new Cadastro();
             $cadastro -> createUsuario($_POST['name'], $_POST['nascimento'], $_POST['email'], $_POST['password']);            
         }
         else{
-            $_SESSION['msg'] = "E-mail já utilizado!";
+            echo "E-mail já utilizado!";
             header("Location: ../View/cadastro.html");
         }
     }
