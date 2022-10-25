@@ -243,7 +243,7 @@ body{
     cursor: pointer;
 }
 
-.form__input, .form__select{
+.form__input, .form__select, .form__password{
     border-radius: 6px;
     padding: .3rem .5rem;
     font-size: 1.1em;
@@ -296,11 +296,11 @@ body{
   color: rgb(212, 8, 8);
 }
 
-.sucess .form__input{
+.sucess .form__input, .sucess .form__password{
   border: 2px solid green;
 }
 
-.erro .form__input{
+.erro .form__input, .erro .form__password{
   border: 2px solid red;
 }
 
