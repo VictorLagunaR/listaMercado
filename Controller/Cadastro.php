@@ -18,6 +18,7 @@ $formulario = [
 class Cadastro{
 
     private $con;
+    
 
     function __construct(){
 
@@ -29,17 +30,16 @@ class Cadastro{
     }
 
     function verificacao($email){
+        $cadastro = new Cadastro();
         $stmt = $this->con->prepare("SELECT email FROM cadastros WHERE email = ?");
         $stmt -> bind_param("s", $email);
         $resul = $stmt -> get_result();
-        if(strlen($resul) == 0){
-
-            $cadastro = new Cadastro();
+        if(($stmt-> execute() > 0)){
             $cadastro -> createUsuario($_POST['name'], $_POST['nascimento'], $_POST['email'], $_POST['password']);            
         }
         else{
             echo "E-mail já utilizado!";
-            header("Location: ../View/cadastro.html");
+            header("Location: ../View/cadastro.php");
         }
     }
 
