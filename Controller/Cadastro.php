@@ -33,8 +33,9 @@ class Cadastro{
         $cadastro = new Cadastro();
         $stmt = $this->con->prepare("SELECT email FROM cadastros WHERE email = ?");
         $stmt -> bind_param("s", $email);
+        $stmt ->execute();
         $resul = $stmt -> get_result();
-        if(($stmt-> execute() > 0)){
+        if(!$resul){
             $cadastro -> createUsuario($_POST['name'], $_POST['nascimento'], $_POST['email'], $_POST['password']);            
         }
         else{
