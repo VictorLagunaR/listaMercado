@@ -1,49 +1,45 @@
-function mensagemErro(elemento){
-    if(msg.length() > 0 ){
 
-        const caixa = elemento;
-        const mensagem = document.createElement("span");
+//recebendo os inputs com a classe form__input
+const inputs = document.querySelectorAll(".form__input");
 
-        mensagem.textContent = "Por favor preencha o Campo!"
+//recebendo o spam de mensagens do input de confirmação de senha
+const mensagem = document.querySelector(".confirm")
 
-        caixa.classList.add("erro");
-        caixa.appendChild(mensagem);
+//recebendo valor das senhas digitadas pelo o usuario
+var password = document.querySelector("#password");
+password = password.value;
+var passwordConfirm = document.querySelector("#passwordConfirm").value;
+passwordConfirm = passwordConfirm.value;
+
+const submit = document.querySelector(".btnCadastrar");
+
+//criando condição ao apertar o botao de enviar
+//ao apertar acionara a função para verificar se todos os campos da respectiva classe foram preenchidos
+
+
+submit.addEventListener('click',function verificacao(event){
+
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.length == 0) {
+            
+            inputs[i].parentNode.classList.add("erro")
+            submit.classList.add("notSubmit")
+            console.log(password)
+            console.log(passwordConfirm)
+
+            if (password == passwordConfirm) {
+                event.preventDefault()
+            }
+            else{
+                mensagem.textContent = "As senhas não são iguais";
+                console.log(mensagem)
+            }
+
+        }
+        else{
+            inputs[i].parentNode.classList.remove("erro")
+            inputs[i].parentNode.classList.add("sucess")
+        }
     }
-}
 
-function mensagemSucesso(){
-    const mensagem = document.createElement("span");
-
-    mensagem.innerText = msg;
-
-    caixa.classList.add("Cadastro realizado com sucesso!");
-    caixa.appendChild(mensagem);
-}
-
-var nomeInput = document.querySelector("#name").value;
-var idadeInput = document.querySelector("#nascimento").value;
-var localidadeInput = document.querySelector("#localidade").value;
-var emailInput = document.querySelector("#email").value;
-var senhaInput = document.querySelector("#password").value;
-
-const form  = document.querySelector(".form");
-
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    if (nomeInput.length() == 0) {
-        mensagemErro(document.querySelector("#name"), )
-    }
-    else if(idadeInput.length() == 0){
-        mensagemErro(document.querySelector("#nascimento"), )
-    }
-    else if(localidadeInput.length() == 0){
-        mensagemErro(document.querySelector("#localidade"), )
-    }
-    else if(emailInput.length() == 0){
-        mensagemErro(document.querySelector("#email"), )
-    }
-    else if(senhaInput.length() == 0){
-        mensagemErro(document.querySelector("#password"), )
-    }
 })
