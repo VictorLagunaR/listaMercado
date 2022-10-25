@@ -247,7 +247,11 @@ body{
     border-radius: 6px;
     padding: .3rem .5rem;
     font-size: 1.1em;
-    
+    transition: outline ease-in-out .3s;
+}
+
+.form__input:focus{
+     outline:1px solid black;
 }
 
 .form__botoes{
