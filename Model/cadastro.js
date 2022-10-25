@@ -19,27 +19,30 @@ const submit = document.querySelector(".btnCadastrar");
 
 submit.addEventListener('click',function verificacao(event){
 
-    for (let i = 0; i < inputs.length; i++) {
+    if(password == passwordConfirm){
+        password.classList.remove("erro");
+        passwordConfirm.classList.remove("erro");
+        password.classList.add("sucess");
+        passwordConfirm.classList.add("sucess");
+        
+        for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value.length == 0) {
-            
+            event.preventDefault()
             inputs[i].parentNode.classList.add("erro")
             submit.classList.add("notSubmit")
             console.log(password)
             console.log(passwordConfirm)
-
-            if (password == passwordConfirm) {
-                event.preventDefault()
-            }
-            else{
-                mensagem.textContent = "As senhas não são iguais";
-                console.log(mensagem)
-            }
-
         }
         else{
             inputs[i].parentNode.classList.remove("erro")
             inputs[i].parentNode.classList.add("sucess")
         }
+    }
+    else{
+        event.preventDefault()
+        password.classList.add("erro");
+        passwordConfirm.classList.add("erro");
+        mensagem.textContent = "As senhas não são iguais";
     }
 
 })
