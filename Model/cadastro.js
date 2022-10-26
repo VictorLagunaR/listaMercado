@@ -39,7 +39,7 @@ submit.addEventListener('click',function verificacao(event){
 
     //verificação das senhas se são iguais e se possuem no  mínimo oito caracterers
     if(senha == senhaConfirm && senha.length > 7){
-        console.log("on")
+        submit.classList.remove("notSubmit")
         password.parentNode.classList.remove("erro");
         passwordConfirm.parentNode.classList.remove("erro");
         password.parentNode.classList.add("sucess");

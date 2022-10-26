@@ -1,12 +1,14 @@
-body{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background: linear-gradient(90deg,#FFF1eb 0%, #ace0f9 100%);
-    font-family: Arial, Helvetica, sans-serif;
-    
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
+body{
+    background: linear-gradient(90deg,#FFF1eb 0%, #ace0f9 100%);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 /*design do fundo animado*/
 
 .box {
@@ -146,172 +148,121 @@ body{
 }
 /*Finalização da animação de fundo*/
 
-
-/* Design da página*/
-
-.principal{
+.main{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100vw;
+    width: 75vw;
     height: 100vh;
     gap: .65rem;
-}
-
-.principal__login{
-    border-radius: 8px;
-    width: 90vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.login__titulo{
-    font-size: 1.9em;
-    font-weight: 700;
-    text-shadow: -1px -1px rgba(82, 82, 82, 0.425);
     position: relative;
-    margin-bottom: 2rem;
-    text-align: center;
-    width: 35vw;
+
 }
 
-.login__titulo:after{
-    display:block;
-    content: '';
-    border: 2px solid #8f6bf3;
-    border-radius: 2px;
-    transition: transform .3s ease-in-out;
-    animation: left-to-right 1s;
-}
-
-/*animação do border title*/
-@keyframes left-to-right{
-    from{
-        transform: scaleX(0);
-    }
-    to{
-        transform: scaleX(1);
-        transform-origin: 50%  50%;
-    }
-}
-/* Finalização do border title*/
 
 .logo{
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
+    margin-top: 8rem;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
 }
 
 .logo__img{
-  width: fit-content;
-  height: 120px;
+    width: fit-content;
+    height: 120px;
 }
 
-.login__form{
+.main__login{
     display: flex;
     flex-direction: column;
-    padding: .5rem 0;
-    gap: 1em;
-    width: 100%;
+    gap: 2rem;
+}
+
+.login__box{
     position: relative;
-    align-items: center;
+    display: flex;
+    height: 30px;
+    transition: all .3s ease-out;
 }
 
-.form__control{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.login__label{
+    position: absolute;
+    left: 0;
+    bottom: 1px;
 }
 
-.form__descricao, .form__select{
-    font-size: 1.1em;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.788);
+.login__label img{
+    width: 30px;
+    height: 30px;
 }
 
-/* Estilização da barra de rolagem */
-.form__select::-webkit-scrollbar{
-    width: 7px;
-    color: black;
-}
-.form__select::-webkit-scrollbar-thumb {
-    background: #cecece;
-    border-radius: 3px;
-  }
-/* Finalização da barra de rolagem */
-
-.form__select{
-    font-weight: 500;
-    font-style: normal;
-    cursor: pointer;
-}
-
-.form__input, .form__select, .form__password{
-  background: none;
-  font-size: 1.1em;
-  transition: all ease-in-out .3s;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.521);
-  padding: .85rem 0;
-}
-
-.form__input:focus, .form__password:focus{
-  border-color:black;
-}
-
-.form__botoes{
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 70vw;
-  gap: 1rem;
-}
-
-.btnCadastrar{
-    font-size: 1.2em;
-    color: white;
-    font-weight: 500;
-    letter-spacing: .06em;
-    padding: .6rem .6rem;
-    border-radius: 20px;
-    background: #6a78d1;
+.login__input{
     width: 100%;
-    box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.25);
-}
-
-.botoes__link{
-    text-decoration:underline;
-    color: #203cee;
+    height: 100%;
+    padding-left: 2.2rem;
+    background: transparent;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.514);
+    transition: all ease-out .5s;
     font-size: 1.05em;
 }
 
-.btnCadastrar, .botoes__link{
-    cursor: pointer;
-    transition: .2s ease-in;
+.login__input:focus{
+    border-bottom-color: black;
 }
 
-/*Mensagens de erro e sucesso*/
 
-@media screen and (min-width:1200px) {
-    .principal__login{
-        width: 50vw;
-    }
+.checkbox{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: fit-content;
+    gap: .3rem;
+    margin-left: .4rem;
+}
 
-    .login__titulo{
-      width: 10vw;
-    }
+.login__buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+}
 
-    .btnCadastrar{
-      width: 30%;
-    }
+#btnLogin{
+    background: #6a78d1;
+    box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.25);
+    width: 60%;
+    padding: .5rem 0;
+    border-radius: 50px;
+    font-size: 1.1em;
+    color: white;
+    margin-bottom: .2rem;
+}
 
-    .btnCadastrar:hover{
-        transform: scale(1.05);
+.buttons__descricao{
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.801);
+}
+
+.buttons__link{
+    text-decoration: underline;
+}
+
+.buttons__link{
+    margin-bottom: .4rem;
+    color: #203cee;
+}
+
+/*Estilização da mensagem para a pagina de login*/
+
+.mensagem{
+    position: absolute;
+    bottom: -20px;
+}
+
+@media screen and (min-width:1220px){
+    .main{
+        width: 40vw;
     }
 }

@@ -1,0 +1,40 @@
+.mensagem{
+    display: none;
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: 0px 0px 5px 5px black;
+  }
+  
+  .sucess .mensagem{
+    display: none;
+  }
+  
+  .erro .mensagem{
+    display: block;
+    color: rgb(212, 8, 8);
+  }
+/*Página de Cadastro*/
+  .sucess .form__input, .sucess .form__password{
+    border-bottom: 2px solid green;
+  }
+  
+  .erro .form__input, .erro .form__password{
+    border-bottom: 2px solid red;
+  }
+/*Página de Cadastro*/
+
+/*Página de login*/
+.sucess .login__input, .sucess .form__password{
+    border-bottom: 2px solid green;
+  }
+  
+  .erro .login__input, .erro .form__password{
+    border-bottom: 2px solid red;
+  }
+/*Página de login*/
+  
+  #notSubmit{
+    user-select: none;
+    background: #777676;
+    color: white;
+  }
