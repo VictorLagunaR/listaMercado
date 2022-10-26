@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/cadastro.css">
+    <link rel="stylesheet" href="assets/css/corpo.css">
+    <link rel="stylesheet" href="assets/css/javascriptVerificacao.css">
     <title>Cadastro</title>
 </head>
 <body>
@@ -12,19 +14,36 @@
         <div class='wave -one'></div>
         <div class='wave -two'></div>
         <div class='wave -three'></div>
-      </div>
+    </div>
     <main class="principal">
+        <div class="logo">
+            <img src="assets/imagens/logo.png" alt="logo" class="logo__img">
+        </div>
         <div class="principal__login">
             <h1 class="login__titulo">Cadastro</h1>
             <form class="login__form" action="../Model/Cadastramento.php" method="POST">
                 <div class="form__control">
-                    <label class="form__descricao" for="name">Nome</label>
-                    <input type="text" name="name" id="name" class="form__input" required>
-                    <span class="mensagem">Preencha o campo!</span>
+                    <input type="text" name="name" id="name" class="form__input" required placeholder="Nome">
+                    <span class="mensagem">Preencha o campo</span>
                 </div>
                 <div class="form__control">
-                    <label class="form__descricao" for="localidade">Localização</label>
-                    <select class="form__select" name="localidade" id="localidade">
+                    <input type="email" name="email" id="email" class="form__input" required placeholder="E-mail">
+                    <span class="mensagem">Preencha o campo</span>
+                </div>
+                <div class="form__control">
+                    <input type="password" name="password" id="password" class="form__password" required placeholder="Senha">
+                    <span class="mensagem password"></span>
+                </div>
+                <div class="form__control">
+                    <input type="password" name="password" id="passwordConfirm" class="form__password" required placeholder="Confirme a senha">
+                    <span class="mensagem confirm"></span>
+                </div>
+                <div class="form__control">
+                    <input type="date" name="nascimento" id="nascimento" class="form__input" required placeholder="Data de nascimento">
+                    <span class="mensagem">Preencha o campo</span>
+                </div>
+                <div class="form__control">
+                    <select class="form__select" name="localidade" id="localidade" placeholder="Localização">
                             
                         <option value="São Paulo">São Paulo</option>
                         <option value="Acre">Acre (AC)</option>
@@ -57,33 +76,10 @@
                     </select>
                 </div>
 
-                <div class="form__control">
-                    <label class="form__descricao" for="nascimento">Nascimento</label>
-                    <input type="date" name="nascimento" id="nascimento" class="form__input" required>
-                    <span class="mensagem">Preencha o campo!</span>
-                </div>
-                
-                <div class="form__control">
-                    <label class="form__descricao" for="email">E-mail</label>
-                    <input type="email" name="email" id="email" class="form__input" required>
-                    <span class="mensagem">Preencha o campo!</span>
-                </div>
-                
-                <div class="form__control">
-                    <label class="form__descricao" for="password">Senha</label>
-                    <input type="password" name="password" id="password" class="form__password" required>
-                    <span class="mensagem password"></span>
-                </div>
-                <div class="form__control">
-                    <label class="form__descricao" for="passwordConfirm">Confirme a senha</label>
-                    <input type="password" name="password" id="passwordConfirm" class="form__password" required>
-                    <span class="mensagem confirm"></span>
-                </div>
-
                 <div class="form__botoes">
                     <input type="submit" value="Cadastrar" class="btnCadastrar" required>
                     <a href="index.php" class="botoes__link">Já tem uma Conta?</a>
-                </div>                
+                </div>         
             </form>
             
         </div>
