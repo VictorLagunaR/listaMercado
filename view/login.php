@@ -40,9 +40,8 @@
                 <p class="buttons__descricao">
                     Não tem uma conta?
                 </p>
-                <a href="cadastro.html" class="buttons__link">Cadastre-se agora!</a>
+                <a href="cadastro.php" class="buttons__link">Cadastre-se agora!</a>
                 <a href="#" class="buttons__link">Esqueci a minha senha</a>
-                <span class="mensagem">Preencha o campo</span>
             </div>
         </form>            
     </main>
