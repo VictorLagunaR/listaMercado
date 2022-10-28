@@ -155,12 +155,12 @@ body{
     height: 100vh;
     gap: .65rem;
     position: relative;
+    justify-content: center;
 
 }
 
 
 .logo{
-    margin-top: 8rem;
     width: 100%;
     height: fit-content;
     display: flex;
@@ -259,6 +259,15 @@ body{
 .mensagem{
     position: absolute;
     bottom: -20px;
+}
+
+/*Mensagem da SESSION*/
+.erro{
+  color: red;
+  font-weight: 700;
+  font-size: 1.07em;
+  text-align: center;
+  width: 100%;
 }
 
 @media screen and (min-width:1220px){

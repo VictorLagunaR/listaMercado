@@ -10,15 +10,18 @@ class Connect{
 
     function conexao(){
         include_once dirname(__FILE__) . '/Constants.php';
-
-        $this->con = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-        if (mysqli_connect_errno()) {
-            echo "Falha de conexão com o MySQL: " . mysqli_connect_error();
+        $dsn = "mysql:dbname=usuarios;host=localhost";
+        $username = DB_USER;
+        $password = DB_PASS;
+        try{
+            $db = new PDO($dsn,$username,$password);
+            $db->exec("SET CHARACTER SET utf8");
+            return $db;            
+        }catch(PDOException $e){
+            echo "Erro: " . $e;
         }
- 
-         
-        return $this->con;
+        
+              
     }
 
 

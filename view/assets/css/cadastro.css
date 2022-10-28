@@ -174,7 +174,6 @@ body{
     position: relative;
     margin-bottom: 2rem;
     text-align: center;
-    width: 35vw;
 }
 
 .login__titulo:after{
@@ -184,6 +183,9 @@ body{
     border-radius: 2px;
     transition: transform .3s ease-in-out;
     animation: left-to-right 1s;
+    position: absolute;
+    width: 110%;
+    left: -5%;
 }
 
 /*animação do border title*/

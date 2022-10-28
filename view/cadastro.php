@@ -20,7 +20,7 @@
             <img src="assets/imagens/logo.png" alt="logo" class="logo__img">
         </div>
         <div class="principal__login">
-            <h1 class="login__titulo">Cadastro</h1>
+            <h1 class="login__titulo">Cadastre-se</h1>
             <form class="login__form" action="../Model/Cadastramento.php" method="POST">
                 <div class="form__control">
                     <input type="text" name="name" id="name" class="form__input" required placeholder="Nome">

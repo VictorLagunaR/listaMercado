@@ -1,3 +1,9 @@
+<?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,15 +25,20 @@
         <div class="logo">
             <img src="assets/imagens/logo.png" alt="logo" class="logo__img">
         </div>
-        <form class="main__login" action="../Controller/login.php">
+        <?php
+            if (isset($_SESSION['msg'])) {
+                echo '<spam class = "erro">' . $_SESSION['msg'] . '</spam>';
+            }
+        ?>
+        <form class="main__login" action="../Model/LoginConectar.php" method="POST">
             <div class="login__box">
                 <label for="" class="login__label"><img src="assets/imagens/email-icon.png" alt=""></label>
-                <input type="email" class="login__input" placeholder="Login">
+                <input type="email" class="login__input" name="email" placeholder="Login">
                 <span class="mensagem">Preencha o campo</span>
             </div>
             <div class="login__box">
                 <label for="" class="login__label"><img src="assets/imagens/password-icon.png" alt=""></label>
-                <input type="password" class="login__input" placeholder="Senha">
+                <input type="password" class="login__input" name="pass" placeholder="Senha">
                 <span class="mensagem">Preencha o campo</span>
             </div>
             <div class="login__box checkbox">
@@ -36,7 +47,7 @@
                 <span class="mensagem">Preencha o campo</span>
             </div> 
             <div class="login__buttons">
-                <input type="submit" value="Login" id="btnLogin" value="Login">
+                <input type="submit" value="Login" id="btnLogin">
                 <p class="buttons__descricao">
                     Não tem uma conta?
                 </p>
