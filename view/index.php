@@ -28,6 +28,7 @@
         <?php
             if (isset($_SESSION['msg'])) {
                 echo '<spam class = "erro">' . $_SESSION['msg'] . '</spam>';
+                unset($_SESSION['msg']);
             }
         ?>
         <form class="main__login" action="../Model/LoginConectar.php" method="POST">

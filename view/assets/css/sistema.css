@@ -1,0 +1,58 @@
+body{
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+
+.listas__lista{
+    border-radius: 8px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../imagens/lista-background.jpeg') bottom;
+    height: 70px;
+}
+
+.listas__lista:nth-child(2n){
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../imagens/lista-background.jpeg') center;
+}
+
+.listas__lista:nth-child(3n){
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../imagens/lista-background.jpeg') top;
+}
+
+.lista__nome{
+    color: rgb(231, 231, 231);
+    padding: .4rem 0 0 .7rem;
+}
+
+.container__adicionar-lista{
+    position: relative;
+    background-color: #6a9af8;
+    height: 70px;
+    width: 100%;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    transition: all .1s ease-in;
+}
+
+.container__adicionar-lista:hover{
+    background: #4d86f8;
+    cursor: pointer;
+}
+
+.adicionar-lista__texto{
+    position: relative;
+}
+
+.material-symbols-outlined{
+    background-color: #373737;
+    border-radius: 100%;
+    color: #dfdede;
+}

@@ -2,7 +2,6 @@ body{
     height: 100vh;
     width: 100vw;
     position: relative;
-    background: linear-gradient(90deg,#FFF1eb 0%, #ace0f9 100%);
     font-family: Arial, Helvetica, sans-serif;
     
 }
@@ -24,7 +23,7 @@ body{
   position: absolute;
   top: 3%;
   left: 10%;
-  background: #0af;
+  background: linear-gradient(90deg, #b171fa 0%, #FA71CD 100%);
   width: 1500px;
   height: 1300px;
   margin-left: -150px;
@@ -282,7 +281,7 @@ body{
     letter-spacing: .06em;
     padding: .6rem .6rem;
     border-radius: 20px;
-    background: #6a78d1;
+    background: linear-gradient(90deg, #C471F5 0%, #FA71CD 100%);;
     width: 100%;
     box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.25);
 }
