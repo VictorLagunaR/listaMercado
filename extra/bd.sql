@@ -1,6 +1,6 @@
-create database IF NOT EXISTS Usuarios;
+create database IF NOT EXISTS bdLista;
 
-use Usuarios;
+use bdLista;
 
 create table Cadastros(
     email VARCHAR(40) not null primary key,
@@ -9,31 +9,44 @@ create table Cadastros(
     nascimento date not null
 );
 
-create table lista IF NOT EXISTS(
-    IDLista int not null primary key auto_increment,
-    idProduto int not null,
-    qtd tinyint not null,
-    CONSTRAINT fk_listaProduto foreign key(produto)
-    REFERENCES produto(IDProduto)
-);
-
-create table produto IF NOT EXISTS(
+create table produto(
     IDProduto int not null primary key auto_increment,
     Nome varchar(40) not null,
     categoria varchar(40) not null,
-    precoKG decimal(5,2)
-):
+    precoKG decimal(5,2) not null,
+    qtd tinyint not null
+);
 
-insert into produto(IDProduto,Nome,categoria,preco)
-VALUES(null, "Batata", "Verdura", 1,37);
+create table lista(
+    IDLista int primary key,
+    nomeLista varchar(40) not null
+);
 
-insert into lista(IDLista,nomeProduto,qtd)
-values(null, "Batata", 2);
+create table itens(
+    idProduto int not null foreign key references produto(idProduto),
+    IDLista int not null foreign key references lista(idlista)
+);
 
-select (produto.Nome,
+insert into produto(IDProduto,Nome,categoria, qtd)
+VALUES(null, "Batata", "Verdura", 2);
+
+insert into produto(IDProduto,Nome,categoria, qtd)
+VALUES(null, "tomate", "fruto", 2);
+
+insert into lista(IDLista,nomeLista,idProduto)
+values(1, "Mercado", 1);
+
+insert into lista(idlista,idProduto)
+values(1,2);
+
+select nomeLista from lista where IDLista = 1;
+
+select produto.Nome,
         produto.categoria,
-        lista.qtd, produto.precoKG,
-        lista.qtd * produto.precoKG AS 'Preco total'
-        from lista INNER JOIN produtos ON lista.IDProduto = produto.IDProdutos
-        where lista.IDLista = :idproduto;
-       );
+        produto.qtd,
+        produto.precoKG,
+        produto.qtd * produto.precoKG AS 'Preco total'
+        from lista INNER JOIN produto ON produto.idProduto = lista.IDProduto 
+        where lista.idlista = 1;
+
+drop database bdlista;
