@@ -9,11 +9,31 @@ create table Cadastros(
     nascimento date not null
 );
 
-create table lista(
-    idLista tinyint not null primary key auto_increment,
-    nomeProduto VARCHAR(30) not null,
-    qtd tinyint not null 
+create table lista IF NOT EXISTS(
+    IDLista int not null primary key auto_increment,
+    idProduto int not null,
+    qtd tinyint not null,
+    CONSTRAINT fk_listaProduto foreign key(produto)
+    REFERENCES produto(IDProduto)
 );
 
-insert into lista(idLista,nomeProduto,qtd)
-VALUES(null,"batata", 2);
+create table produto IF NOT EXISTS(
+    IDProduto int not null primary key auto_increment,
+    Nome varchar(40) not null,
+    categoria varchar(40) not null,
+    precoKG decimal(5,2)
+):
+
+insert into produto(IDProduto,Nome,categoria,preco)
+VALUES(null, "Batata", "Verdura", 1,37);
+
+insert into lista(IDLista,nomeProduto,qtd)
+values(null, "Batata", 2);
+
+select (produto.Nome,
+        produto.categoria,
+        lista.qtd, produto.precoKG,
+        lista.qtd * produto.precoKG AS 'Preco total'
+        from lista INNER JOIN produtos ON lista.IDProduto = produto.IDProdutos
+        where lista.IDLista = :idproduto;
+       );
