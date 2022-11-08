@@ -54,7 +54,24 @@ insert into itens values
 (2,2),
 (3,2);
 
-select lista.nomeLista, produto.nome, itens.idLista from itens inner join lista on lista.IDLista = itens.idLista 
-inner join produto 
-on produto.idproduto = itens.idProduto
-group by produto.idproduto;
+-- select para pegar a lista e o nome dela perante o usuário
+select lista.nomeLista, itens.idLista from itens 
+inner join lista 
+    on lista.IDLista = itens.idLista 
+inner join cadastro
+    on lista.IDusuario = cadastro.IDusuario
+where lista.IDusuario = 1;
+
+-- select para pegar os produtos numa lista
+select lista.nomelista,
+produto.nome,
+produto.categoria,
+produto.qtd,
+produto.preco as 'preco unitario',
+produto.qtd * produto.preco as 'preço total'
+from itens 
+inner join produtos
+    on itens.idproduto = produto.idproduto
+inner join lista
+    on itens.idlista = lista.idlista
+where  lista.idlista = 1 and lista.idcadastro = 1;
