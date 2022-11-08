@@ -20,10 +20,10 @@ create table produto(
 );
 
 create table lista(
-    IDLista int primary key,
-    idCadastro int not null,
+    IDLista int primary key auto_increment,
+    IDusuario int not null,
     nomeLista varchar(40) not null,
-    foreing key(idCadastro) references Cadastros(idCadastro)
+    foreign key(IDusuario) references Cadastros(IDusuario)
 );
 
 create table itens(
@@ -32,3 +32,29 @@ create table itens(
     foreign key(idProduto) references produto(idProduto),
     foreign key(idlista) references lista(idlista)
 );
+
+insert into Cadastros values(0, 'laguna.vitorc@gmail.com', 'voutirar10','victinho', 2004/03/16);
+insert into produto values(0, 'batata', 'legume', 3.5, 2),
+(0, 'alface', 'vegetal', 3.5, 5),
+(0, 'tomate', 'fruta', 3.5, 3);
+
+insert into lista values
+(1, 1 , 'mercado do mes');
+
+insert into lista values
+(2, 1 , 'mercado da semana');
+
+insert into itens values
+(1,1),
+(2,1),
+(3,1);
+
+insert into itens values
+(1,2),
+(2,2),
+(3,2);
+
+select lista.nomeLista, produto.nome, itens.idLista from itens inner join lista on lista.IDLista = itens.idLista 
+inner join produto 
+on produto.idproduto = itens.idProduto
+group by produto.idproduto;
