@@ -10,6 +10,7 @@ body{
     border-radius: 8px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../imagens/lista-background.jpeg') bottom;
     height: 70px;
+    box-shadow: 0 5px 5px 0 #cecece;
 }
 
 .listas__lista:nth-child(2n){
@@ -40,6 +41,7 @@ body{
     align-items: center;
     gap: .5rem;
     transition: all .1s ease-in;
+    box-shadow: 0 2px 5px 0 #cecece;
 }
 
 .container__adicionar-lista:hover{
@@ -55,4 +57,55 @@ body{
     background-color: #373737;
     border-radius: 100%;
     color: #dfdede;
+}
+
+/*formulario para adicionar nome da lista*/
+#adicionar-lista{
+    display: none;
+    flex-direction: column;
+    
+    justify-content: center;
+
+}
+.adicionar__input{
+    height: 3.5rem;
+    border-radius: 8px;
+    padding: 0 1rem;
+    font-size: 17px;
+    color: black;
+    background-color: #9bbdff;
+    box-shadow: 0 2px 5px 0 #cecece;
+}
+
+.adicionar__input::placeholder{
+    color: black;
+}
+
+.adicionar__buttons{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.adicionar__enviar{
+    width: 25%;
+    text-align: center;
+    border-radius: 8px;
+    padding: .5rem;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0 1px 5px 1px #cecece;
+}
+
+.adicionar__enviar:first-child{
+    background:linear-gradient(45deg,rgb(224, 11, 11) 0%, rgb(255, 0, 0) 100%);
+}
+
+.adicionar__enviar:last-child{
+    background:linear-gradient(45deg, rgb(11, 148, 11), green);
+}
+
+.mensagemErro{
+    color: red;
+    display: none;
 }
