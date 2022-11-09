@@ -1,17 +1,21 @@
+<!-- <?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+?> -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="assets/css/corpo.css"> 
-    <link rel="stylesheet" href="assets/css/adiconarProdutos.css">   
-    <title>Adicionar produtos</title>
+    <link rel="stylesheet" href="assets/css/corpo.css">
+    <link rel="stylesheet" href="assets/css/sistema.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="assets/css/header.css">
+    <title>Lista de Comprar</title>
 </head>
 <body>
     <header class="cabecalho">
@@ -34,41 +38,36 @@
             </ul>
         </button>
     </header>
-
-    <main class="lista">
-        <h1 class="lista__nome">Nome</h1>
-        <h2 class="lista__produtoNome">Adicione um item na lista</h2>
-        <div class="lista__adicionarProduto">
-            <input type="text" class="adicionarProduto_input" placeholder="Ex: Batata">
-            <button class="adicionarProduto__button">
-                <span class="material-symbols-outlined adicionarProduto__icon">
-                    add
-                    </span>
-            </button>
-        </div>
-
-        <div class="produtos">
-            <ul class="produtos__lista">
-                <li class="lista__produto">
-                    <h3 class="produto__nome">nome produto</h3>
-                    <button class="produto__excluir">
-                        <span class="material-symbols-outlined">
-                            close
-                            </span>
-                    </button>
-                </li>
-                <li class="lista__produto">
-                    <h3 class="produto__nome">nome produto</h3>
-                    <button class="produto__excluir">
-                        <span class="material-symbols-outlined ">
-                            close
-                            </span>
-                    </button>
-                </li>
-            </ul>
-        </div>
+    <main class="container">
+        <h1 class="container__titulo">Minhas listas</h1>
+        <ul class="container__listas">
+            <li class="listas__lista">
+                <h3 class="lista__nome">Compras pra casa</h3>
+            </li>
+            <li class="listas__lista">
+                <h3 class="lista__nome">hoje</h3>
+            </li>
+            <li class="listas__lista">
+                <h3 class="lista__nome">Corn dog</h3>
+            </li>
+        </ul>
+        <button class="container__adicionar-lista"> 
+            <span class="material-symbols-outlined">
+            add
+            </span>
+            Nova lista
+        </button>
+        <form action="../Model/AdicionarLista.php" method="post" id="adicionar-lista">
+            <input type="text" class="adicionar__input" placeholder="Nome da Lista:">
+            <spam class="mensagemErro">Insira um nome!</spam>
+            <div class="adicionar__buttons">
+                <button class="adicionar__enviar  excluir" >Excluir</button>
+                <input type="submit" class="adicionar__enviar submit" value="Adicionar">
+            </div>
+        </form>
     </main>
 
 
+    <script src="../Model/adicionar-item.js"></script>
 </body>
 </html>
