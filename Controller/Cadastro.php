@@ -24,7 +24,7 @@ class Cadastro{
         if(!$stmt->rowCount()){
             $cadastro = new Cadastro();
             $cadastro -> createUsuario($_POST['name'], $_POST['nascimento'], $_POST['email'], $_POST['password']);            
-            echo "sucesso";
+            
         }
         else{
             

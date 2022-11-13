@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="assets/css/corpo.css"> 
-    <link rel="stylesheet" href="assets/css/adiconarProdutos.css">   
+    <link rel="stylesheet" href="assets/css/adicionarProdutos.css">   
     <title>Adicionar produtos</title>
 </head>
 <body>
@@ -43,14 +43,14 @@
             <button class="adicionarProduto__button">
                 <span class="material-symbols-outlined adicionarProduto__icon">
                     add
-                    </span>
+                </span>
             </button>
         </div>
 
         <div class="produtos">
             <ul class="produtos__lista">
                 <li class="lista__produto">
-                    <h3 class="produto__nome">nome produto</h3>
+                    <h3 class="produto__nome">nome produto1</h3>
                     <button class="produto__excluir">
                         <span class="material-symbols-outlined">
                             close
@@ -58,7 +58,7 @@
                     </button>
                 </li>
                 <li class="lista__produto">
-                    <h3 class="produto__nome">nome produto</h3>
+                    <h3 class="produto__nome">nome produto2</h3>
                     <button class="produto__excluir">
                         <span class="material-symbols-outlined ">
                             close
@@ -69,6 +69,6 @@
         </div>
     </main>
 
-
+    <script src="../Model/deletarProduto.js"></script>
 </body>
 </html>

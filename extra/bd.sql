@@ -39,10 +39,10 @@ insert into produto values(0, 'batata', 'legume', 3.5, 2),
 (0, 'tomate', 'fruta', 3.5, 3);
 
 insert into lista values
-(1, 1 , 'mercado do mes');
+(0, 1 , 'mercado do mes');
 
 insert into lista values
-(2, 1 , 'mercado da semana');
+(0, 1 , 'mercado da semana');
 
 insert into itens values
 (1,1),
@@ -58,9 +58,10 @@ insert into itens values
 select lista.nomeLista, itens.idLista from itens 
 inner join lista 
     on lista.IDLista = itens.idLista 
-inner join cadastro
-    on lista.IDusuario = cadastro.IDusuario
-where lista.IDusuario = 1;
+inner join cadastros
+    on lista.IDusuario = cadastros.IDusuario
+where lista.IDusuario = 1
+group by idLista;
 
 -- select para pegar os produtos numa lista
 select lista.nomelista,
@@ -70,7 +71,7 @@ produto.qtd,
 produto.preco as 'preco unitario',
 produto.qtd * produto.preco as 'preço total'
 from itens 
-inner join produtos
+inner join produto
     on itens.idproduto = produto.idproduto
 inner join lista
     on itens.idlista = lista.idlista

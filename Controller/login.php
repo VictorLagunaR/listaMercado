@@ -31,11 +31,12 @@
         }
 
         function verificacaoLogin($e,$p){
-            $stmt = $this->con->prepare("SELECT email, password FROM cadastros where email = :email and password = :password");
+            $stmt = $this->con->prepare("SELECT email, password, IDusuario FROM cadastros where email = :email and password = :password");
             $stmt -> bindValue(":email", $e);
             $stmt -> bindValue(":password", $p);
             $stmt->execute();
             if ($stmt -> rowCount()) {
+                $_SESSION['idUsuario'] = $stmt -> fetchColumn(2);
                 header("Location: ../View/sistema.php");
             }
             else{

@@ -36,13 +36,22 @@
     left: 0;
 } */
 
-#menu__icon,#usuario__icon{
+#menuIcon,#usuario__icon{
     width: 30px;
     border-radius: 50%;
-    padding: .2rem;
+    background: none;
+    color: black;
+    transition: .2s all ease-in;
 }
 
-#menu__icon:hover,#usuario__icon:hover{
+#menIcon{
+    border-radius: 40%;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#menuIcon:hover,#usuario__icon:hover{
     cursor: pointer;
     background-color: #0000002c;
 }

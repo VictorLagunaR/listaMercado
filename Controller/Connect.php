@@ -4,13 +4,9 @@ class Connect{
 
     private $con;
 
-    function __construct(){
-        
-    }
-
     function conexao(){
         include_once dirname(__FILE__) . '/Constants.php';
-        $dsn = "mysql:dbname=usuarios;host=localhost";
+        $dsn = "mysql:dbname=bdLista;host=localhost";
         $username = DB_USER;
         $password = DB_PASS;
         try{

@@ -1,8 +1,11 @@
-<!-- <?php
+<?php
     if (!isset($_SESSION)) {
         session_start();
+        require_once ("../Controller/Api.php");
+        $api = new Api();
     }
-?> -->
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,15 +44,9 @@
     <main class="container">
         <h1 class="container__titulo">Minhas listas</h1>
         <ul class="container__listas">
-            <li class="listas__lista">
-                <h3 class="lista__nome">Compras pra casa</h3>
-            </li>
-            <li class="listas__lista">
-                <h3 class="lista__nome">hoje</h3>
-            </li>
-            <li class="listas__lista">
-                <h3 class="lista__nome">Corn dog</h3>
-            </li>
+            <?php
+                $api-> puxarListas($_SESSION['idUsuario']);
+            ?>
         </ul>
         <button class="container__adicionar-lista"> 
             <span class="material-symbols-outlined">
@@ -58,7 +55,7 @@
             Nova lista
         </button>
         <form action="../Model/AdicionarLista.php" method="post" id="adicionar-lista">
-            <input type="text" class="adicionar__input" placeholder="Nome da Lista:">
+            <input type="text" class="adicionar__input" placeholder="Nome da Lista:" name="novaLista">
             <spam class="mensagemErro">Insira um nome!</spam>
             <div class="adicionar__buttons">
                 <button class="adicionar__enviar  excluir" >Excluir</button>
@@ -68,6 +65,7 @@
     </main>
 
 
-    <script src="../Model/adicionar-item.js"></script>
+    <script src="../Model/adicionar-lista.js"></script>
+    <script src = "../Model/acessaLista.js"></script>
 </body>
 </html>

@@ -38,6 +38,7 @@
     font-size: 24px;
     padding: .2rem;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .produtos{
@@ -68,5 +69,10 @@
 }
 
 .produto__excluir{
+    cursor: pointer;
     background-color: transparent;
+}
+
+.deletado{
+    display: none;
 }

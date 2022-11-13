@@ -21,7 +21,16 @@ body{
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../imagens/lista-background.jpeg') top;
 }
 
+.lista__btn{
+    border-radius: 8px;
+    background: transparent;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
 .lista__nome{
+    font-size: 18px;
     color: rgb(231, 231, 231);
     padding: .4rem 0 0 .7rem;
 }
@@ -54,6 +63,7 @@ body{
 }
 
 .material-symbols-outlined{
+    padding-left: .004rem;
     background-color: #373737;
     border-radius: 100%;
     color: #dfdede;
