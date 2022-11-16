@@ -1,3 +1,11 @@
+<?php
+    if (!isset($_SESSION)) {
+        session_start();
+        require_once ("../Controller/Api.php");
+        $api = new Api();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,10 +44,12 @@
     </header>
 
     <main class="lista">
-        <h1 class="lista__nome">Nome</h1>
+        <?php
+            $api -> nomeLista($_SESSION['idUsuario'],$_SESSION['IDlista']);
+        ?>
         <h2 class="lista__produtoNome">Adicione um item na lista</h2>
         <div class="lista__adicionarProduto">
-            <input type="text" class="adicionarProduto_input" placeholder="Ex: Batata">
+            <input type="text" class="adicionarProduto__input" placeholder="Ex: Batata">
             <button class="adicionarProduto__button">
                 <span class="material-symbols-outlined adicionarProduto__icon">
                     add
@@ -49,26 +59,16 @@
 
         <div class="produtos">
             <ul class="produtos__lista">
-                <li class="lista__produto">
-                    <h3 class="produto__nome">nome produto1</h3>
-                    <button class="produto__excluir">
-                        <span class="material-symbols-outlined">
-                            close
-                            </span>
-                    </button>
-                </li>
-                <li class="lista__produto">
-                    <h3 class="produto__nome">nome produto2</h3>
-                    <button class="produto__excluir">
-                        <span class="material-symbols-outlined ">
-                            close
-                            </span>
-                    </button>
-                </li>
+                <?php
+                    $api -> puxarProdutos($_SESSION['idUsuario'],$_SESSION['IDlista']);
+                ?>
             </ul>
         </div>
     </main>
 
-    <script src="../Model/deletarProduto.js"></script>
+    <script src="assets/js/deletarProduto.js"></script>
+    <script src="assets/js/adicionarProduto.js"></script>
+    <script src="assets/js/JQuery/jquery-3.5.1.min.js"></script>
+
 </body>
 </html>

@@ -16,3 +16,10 @@ body{
     position: relative;
     background: linear-gradient(167.95deg, #F3E7E9 0%, #E3EEFF 99%, #E3EEFF 100%);
 }
+
+.notFind{
+    font-size: 17px;
+    font-style: italic;
+    color: #585858;
+    border-bottom: 1px solid #ccc;
+}

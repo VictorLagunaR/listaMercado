@@ -13,10 +13,7 @@ create table Cadastros(
 
 create table produto(
     IDProduto int not null primary key auto_increment,
-    Nome varchar(40) not null,
-    categoria varchar(40) not null,
-    preco decimal(5,2) not null,
-    qtd tinyint not null
+    Nome varchar(40) not null
 );
 
 create table lista(
@@ -34,9 +31,9 @@ create table itens(
 );
 
 insert into Cadastros values(0, 'laguna.vitorc@gmail.com', 'voutirar10','victinho', 2004/03/16);
-insert into produto values(0, 'batata', 'legume', 3.5, 2),
-(0, 'alface', 'vegetal', 3.5, 5),
-(0, 'tomate', 'fruta', 3.5, 3);
+insert into produto values(0, 'batata'),
+(0, 'alface'),
+(0, 'tomate');
 
 insert into lista values
 (0, 1 , 'mercado do mes');
@@ -65,14 +62,10 @@ group by idLista;
 
 -- select para pegar os produtos numa lista
 select lista.nomelista,
-produto.nome,
-produto.categoria,
-produto.qtd,
-produto.preco as 'preco unitario',
-produto.qtd * produto.preco as 'preço total'
+produto.nome
 from itens 
 inner join produto
     on itens.idproduto = produto.idproduto
 inner join lista
     on itens.idlista = lista.idlista
-where  lista.idlista = 1 and lista.idcadastro = 1;
+where  lista.idlista = 1 and lista.IDusuario = 1;

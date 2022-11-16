@@ -65,7 +65,8 @@
     </main>
 
 
-    <script src="../Model/adicionar-lista.js"></script>
-    <script src = "../Model/acessaLista.js"></script>
+    <script src="assets/js/adicionar-lista.js"></script>
+    <script src = "assets/js/acessaLista.js"></script>
+    <script src = "assets/js/JQuery/jquery-3.5.1.min.js"></script>
 </body>
 </html>

@@ -25,7 +25,7 @@
     margin-bottom: 2rem;
 }
 
-.adicionarProduto_input{
+.adicionarProduto__input{
     width: 50%;
     background: none;
     border-bottom: 1px solid black;
@@ -66,6 +66,11 @@
     color: #222121;
     font-weight: 500;
     font-size: 19px;
+}
+
+.produto__categoria{
+    font-size: 14px;
+    color: #585858;
 }
 
 .produto__excluir{

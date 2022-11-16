@@ -58,6 +58,6 @@
         </form>            
     </main>
 
-    <script src="../Model/login.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 </html>

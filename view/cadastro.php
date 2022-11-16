@@ -85,6 +85,6 @@
         </div>
     </main>
 
-    <script src="../Model/cadastro.js"></script>
+    <script src="assets/js/cadastro.js"></script>
 </body>
 </html>
