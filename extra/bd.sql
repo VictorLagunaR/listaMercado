@@ -1,5 +1,4 @@
-DROP DATABASE bdLista IF EXISTS;
-create database IF NOT EXISTS bdLista;
+create database bdLista;
 
 use bdLista;
 
@@ -29,27 +28,6 @@ create table itens(
     foreign key(idProduto) references produto(idProduto),
     foreign key(idlista) references lista(idlista)
 );
-
-insert into Cadastros values(0, 'laguna.vitorc@gmail.com', 'voutirar10','victinho', 2004/03/16);
-insert into produto values(0, 'batata'),
-(0, 'alface'),
-(0, 'tomate');
-
-insert into lista values
-(0, 1 , 'mercado do mes');
-
-insert into lista values
-(0, 1 , 'mercado da semana');
-
-insert into itens values
-(1,1),
-(2,1),
-(3,1);
-
-insert into itens values
-(1,2),
-(2,2),
-(3,2);
 
 -- select para pegar a lista e o nome dela perante o usuário
 select lista.nomeLista, itens.idLista from itens 
