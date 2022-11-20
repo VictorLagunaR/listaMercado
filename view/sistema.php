@@ -3,8 +3,9 @@
         session_start();
         require_once ("../Controller/Api.php");
         $api = new Api();
+        
     }
-
+    
 ?>
 
 <!DOCTYPE html>

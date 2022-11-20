@@ -69,7 +69,7 @@ class Api{
             }while($listas = $stmt -> fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_PRIOR));
         }
         else{
-            echo '<h3 class = "notFin">Nenhuma lista encontrada</h3>';
+            echo '<h3 class = "notFind">Nenhuma lista encontrada</h3>';
         }
     }
 
@@ -86,7 +86,9 @@ class Api{
     }
 
     public function puxarProdutos($idUsuario,$idLista){
-        $stmt = $this -> con -> prepare("SELECT lista.nomelista,
+        header('Content-Type: application/json');
+
+        $stmt = $this -> con -> prepare("SELECT itens.idproduto,
         produto.nome
         from itens 
         inner join produto
@@ -101,27 +103,26 @@ class Api{
         $stmt -> execute();
 
         //verificando se puxou algum produto no banco de dados  
-        if ($stmt -> rowCount()) {
+        if (($stmt -> rowCount()) > 0) {
             //se sim, mostrará todos os produtos que foi achado
-            $produtos = $stmt -> fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_LAST);
-            do{
-                
-                echo 
-                '<li class="lista__produto">
-                    <div class = "produto__container">
-                        <h3 class="produto__nome">' . $produtos[1] .'</h3>
-                    </div>
-                    <button class="produto__excluir">
-                        <span class="material-symbols-outlined">
-                            close
-                            </span>
-                    </button>
-                </li>';
-            }while($produtos = $stmt -> fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_PRIOR));
+            echo json_encode($stmt -> fetchAll(PDO::FETCH_ASSOC));
         }
         else{
             //se não, retornará uma mensagem
-            echo '<h3 class = "notFind">Nenhum produto encontrado</h3>';
+            echo json_encode('Nenhum Produto encotrado');
+        }
+    }
+
+    function deletarProduto($ProdutoDelete){
+        header('Content-Type: application/json');
+
+        $stmt = $this -> con -> prepare("DELETE FROM itens WHERE idproduto = :id");
+        $stmt -> bindValue(":id", $ProdutoDelete);
+        if ($stmt-> execute()) {
+            echo json_encode("Excluido");
+        }
+        else{
+            echo json_encode("Falha ao excluir, tente novamente mais tarde");
         }
     }
 

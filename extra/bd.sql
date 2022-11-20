@@ -61,7 +61,8 @@ where lista.IDusuario = 1
 group by idLista;
 
 -- select para pegar os produtos numa lista
-select lista.nomelista,
+select itens.idproduto,
+itens.idlista,
 produto.nome
 from itens 
 inner join produto

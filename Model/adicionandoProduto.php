@@ -4,4 +4,4 @@ require_once "../Controller/Api.php";
 
 $adicionar = new Api();
 
-// $adicionar -> adicionarProduto($_SESSION['IDlista'],$_POST['nome']);
+$adicionar -> adicionarProduto($_SESSION['IDlista'],$_POST['nome']);

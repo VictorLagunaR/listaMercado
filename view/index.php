@@ -22,6 +22,9 @@
         <div class='wave -three'></div>
     </div>
     <main class="main">
+        <div class="main__aside">
+            <img src="assets/imagens/mercado.png">
+        </div>
         <div class="logo">
             <img src="assets/imagens/logo.png" alt="logo" class="logo__img">
         </div>

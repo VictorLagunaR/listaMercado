@@ -59,16 +59,12 @@
 
         <div class="produtos">
             <ul class="produtos__lista">
-                <?php
-                    $api -> puxarProdutos($_SESSION['idUsuario'],$_SESSION['IDlista']);
-                ?>
             </ul>
         </div>
     </main>
 
-    <script src="assets/js/deletarProduto.js"></script>
-    <script src="assets/js/adicionarProduto.js"></script>
-    <script src="assets/js/JQuery/jquery-3.5.1.min.js"></script>
 
+    <script src="assets/js/JQuery/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/produtos.js"></script>
 </body>
 </html>

@@ -269,8 +269,39 @@ body{
   width: 100%;
 }
 
+.main__aside{
+  display: none;
+  width: max-content;
+  height: 100vh;
+  overflow: hidden;
+}
+
 @media screen and (min-width:1220px){
+  body{
+    justify-content: center;
+  }
     .main{
-        width: 40vw;
+        width: 100vw;
+        height: 100vh;
+        justify-content:unset;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .main__aside{
+      display: block;
+    }
+
+    .logo{
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: max-content;
+    }
+
+    .main__login{
+      height: 100%;
+      align-items: center;
+      justify-content: center;
     }
 }
