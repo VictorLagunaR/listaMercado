@@ -271,14 +271,19 @@ body{
 
 .main__aside{
   display: none;
-  width: max-content;
+  width: 50%;
   height: 100vh;
   overflow: hidden;
 }
 
 @media screen and (min-width:1220px){
+  .box{
+    right: -180vw;
+    bottom: -95vw;
+  }
   body{
     justify-content: center;
+    background: linear-gradient(153.97deg, #F3E7E9 0%, #E3EEFF 99.99%, #E3EEFF 101%);
   }
     .main{
         width: 100vw;
@@ -299,9 +304,46 @@ body{
       width: max-content;
     }
 
+    .logo__img{
+      height: 90px;
+    }
+
     .main__login{
+      width: 50%;
       height: 100%;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
+    }
+
+    .login__box{
+      margin: 0 1rem;
+      width: 80%;
+    }
+
+    .checkbox{
+      justify-content: flex-end;
+    }
+
+    .login__buttons{
+      width: 50%;
+      margin: 0 1rem;
+      align-items: flex-start;
+    }
+
+    #btnLogin{
+      border-radius: 8px;
+      height: 50px;
+    }
+    .buttons__link{
+      color: black;
+    }
+    .buttons__descricao{
+      margin-top: 1rem;
+    }
+
+    .erro{
+      text-align: left;
+      margin-left: 1rem;
+      width: fit-content;
     }
 }

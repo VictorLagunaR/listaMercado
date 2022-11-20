@@ -297,19 +297,80 @@ body{
     transition: .2s ease-in;
 }
 
+.main__aside{
+  display: none;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
 /*Mensagens de erro e sucesso*/
 
 @media screen and (min-width:1200px) {
+  .box{
+    right: -180vw;
+    bottom: -95vw;
+  }
+  body{
+    position: relative;
+    justify-content: center;
+    background: linear-gradient(153.97deg, #F3E7E9 0%, #E3EEFF 99.99%, #E3EEFF 101%);
+    overflow: hidden;
+  }
+    .principal{
+        width: 100vw;
+        height: 100vh;
+        justify-content:unset;
+        align-items: center;
+        flex-direction: row;
+        
+    }
+
+    .main__aside{
+      display: block;
+    }
+
+    .logo{
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: max-content;
+      margin: 0;
+    }
+
+    .logo__img{
+      height: 90px;
+    }
+  
     .principal__login{
-        width: 50vw;
+        width: 60vw;
+        position: relative;
+        margin-left: 1rem;
     }
 
     .login__titulo{
-      width: 10vw;
+      width: fit-content;
+      align-self: flex-start;
+      margin-left: 1rem;
+      text-align: left;
+    }
+
+    .form__control{
+      width: 90%;
+      align-self: flex-start;
+    }
+
+    .form__botoes{
+      width: 100%;
+      align-items: flex-start;
     }
 
     .btnCadastrar{
       width: 30%;
+      border-radius: 8px;
+      height: 55px;
+      width: max-content;
+      padding: 1rem 1.5rem;
     }
 
     .btnCadastrar:hover{

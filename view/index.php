@@ -28,13 +28,14 @@
         <div class="logo">
             <img src="assets/imagens/logo.png" alt="logo" class="logo__img">
         </div>
+
+        <form class="main__login" action="../Model/LoginConectar.php" method="POST">
         <?php
             if (isset($_SESSION['msg'])) {
                 echo '<spam class = "erro">' . $_SESSION['msg'] . '</spam>';
                 unset($_SESSION['msg']);
             }
         ?>
-        <form class="main__login" action="../Model/LoginConectar.php" method="POST">
             <div class="login__box">
                 <label for="" class="login__label"><img src="assets/imagens/email-icon.png" alt=""></label>
                 <input type="email" class="login__input" name="email" placeholder="Login">
@@ -52,11 +53,12 @@
             </div> 
             <div class="login__buttons">
                 <input type="submit" value="Login" id="btnLogin">
+                <a href="#" class="buttons__link">Esqueci a minha senha</a>
                 <p class="buttons__descricao">
                     Não tem uma conta?
                 </p>
                 <a href="cadastro.php" class="buttons__link">Cadastre-se agora!</a>
-                <a href="#" class="buttons__link">Esqueci a minha senha</a>
+                
             </div>
         </form>            
     </main>

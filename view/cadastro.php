@@ -16,6 +16,9 @@
         <div class='wave -three'></div>
     </div>
     <main class="principal">
+        <div class="main__aside">
+            <img src="assets/imagens/mercadoCadastro.png">
+        </div>
         <div class="logo">
             <img src="assets/imagens/logo.png" alt="logo" class="logo__img">
         </div>
@@ -77,7 +80,7 @@
                 </div>
 
                 <div class="form__botoes">
-                    <input type="submit" value="Cadastrar" class="btnCadastrar" required>
+                    <input type="submit" value="Criar uma Conta" class="btnCadastrar" required>
                     <a href="index.php" class="botoes__link">Já tem uma Conta?</a>
                 </div>         
             </form>

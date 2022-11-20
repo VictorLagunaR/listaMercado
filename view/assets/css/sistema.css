@@ -4,7 +4,24 @@ body{
     position: relative;
 }
 
+.container{
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    
+}
 
+.container__titulo{
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.container__listas{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
 
 .listas__lista{
     border-radius: 8px;
@@ -27,6 +44,7 @@ body{
     display: flex;
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 
 .lista__nome{
@@ -101,6 +119,7 @@ body{
     width: 25%;
     text-align: center;
     border-radius: 8px;
+    cursor: pointer;
     padding: .5rem;
     font-size: 16px;
     color: white;
@@ -120,3 +139,39 @@ body{
     display: none;
 }
 
+@media screen and (min-width:1200px) {
+    .container{
+        align-items: center;
+    }
+
+    .container__listas{
+        width: 70%; 
+    }
+
+    .listas__lista{
+        height: 90px;
+    }
+
+    .lista__nome{
+        font-size: 1.8em;
+    }
+
+    .container__adicionar-lista{
+        width: 70%;
+        height: 90px;
+    }
+
+    #adicionar-lista{
+        width: 70%;
+    }
+
+    .adicionar__input{
+        height: 90px;
+        font-size: 1.2em;
+
+    }
+    .adicionar__buttons{
+        height: 50px;
+    }
+
+}
