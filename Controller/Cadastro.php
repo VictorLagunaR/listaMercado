@@ -51,7 +51,7 @@ class Cadastro{
     function createUsuario($n,$b,$e,$p){
         $stmt = $this->con->prepare("INSERT INTO cadastros (name, nascimento, email, password) VALUES (:name,:nascimento,:email,:password)");
         $stmt -> bindValue(":name", $n);
-        $stmt -> bindValue(":nascimento", $n);
+        $stmt -> bindValue(":nascimento", $b);
         $stmt -> bindValue(":email", $e);
         $stmt -> bindValue(":password", $p);
 
