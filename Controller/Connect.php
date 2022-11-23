@@ -6,7 +6,7 @@ class Connect{
 
     function conexao(){
         include_once dirname(__FILE__) . '/Constants.php';
-        $dsn = "mysql:dbname=bdLista;host=localhost";
+        $dsn = "mysql:dbname=bdLista;port=3307;host=localhost";
         $username = DB_USER;
         $password = DB_PASS;
         try{
