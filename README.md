@@ -16,6 +16,3 @@
 
 > # Tela de Login
 <img src= "view/assets/imagens/tela-login.jpeg" height = 500px;>
-
-* # Versão Mobile
-<img src="view/assets/imagens/tela-login-mobile.jpeg" height = 700px;>
